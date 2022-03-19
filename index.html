@@ -8,10 +8,9 @@
 		<link rel="stylesheet" href="./index.css" />
 	</head>
 	<body>
-		<section class="selection-container">
-			<div>
+		<section class="selection-outer-container">
+			<div class="selection-inner-container">
 				<h2>Flake Size</h2>
-				<p>required</p>
 				<div class="">
 					<input
 						type="radio"
@@ -50,9 +49,8 @@
 					<label for="flakeChoice4">Variable Size Color Flakes</label>
 				</div>
 			</div>
-			<div>
+			<div class="selection-inner-container">
 				<h2>Add-Ins</h2>
-				<p>optional</p>
 				<div>
 					<input
 						type="checkbox"
@@ -86,7 +84,9 @@
 			<h2>Dimensions</h2>
 			<div class="dimension-outer-container">
 				<div class="dimension-inner-container">
-					<label class="dimension-label">First Half Garage Width<span>*</span></label>
+					<div class="label-container">
+						<label class="dimension-label">First Half Garage Width</label>
+					</div>
 					<input
 						class="dimension-input"
 						type="tel"
@@ -98,21 +98,27 @@
 					/>
 				</div>
 				<div class="dimension-inner-container">
-					<label class="dimension-label">First Half Garage Depth<span>*</span></label>
-					<input
-						class="dimension-input"
-						type="tel"
-						id="firstHalfDepth"
-						name="1stHalfDepth"
-						onInput="handleDimensionChange('firstHalfDepth')"
-						maxlength="3"
-						value="21"
-					/>
+					<div>
+						<div class="label-container">
+							<label class="dimension-label">First Half Garage Depth</label>
+						</div>
+						<input
+							class="dimension-input"
+							type="tel"
+							id="firstHalfDepth"
+							name="1stHalfDepth"
+							onInput="handleDimensionChange('firstHalfDepth')"
+							maxlength="3"
+							value="21"
+						/>
+					</div>
 				</div>
 			</div>
 			<div class="dimension-outer-container">
 				<div class="dimension-inner-container">
-					<label class="dimension-label">Second Half Garage Width</label>
+					<div class="label-container">
+						<label class="dimension-label">Second Half Garage Width</label>
+					</div>
 					<input
 						class="dimension-input"
 						type="tel"
@@ -125,7 +131,9 @@
 					/>
 				</div>
 				<div class="dimension-inner-container">
-					<label class="dimension-label">Second Half Garage Depth</label>
+					<div class="label-container">
+						<label class="dimension-label">Second Half Garage Depth</label>
+					</div>
 					<input
 						class="dimension-input"
 						type="tel"
@@ -138,8 +146,10 @@
 					/>
 				</div>
 			</div>
-			<div class="dimension-inner-container">
-				<label class="dimension-label">Stem Wall Length</label>
+			<div class="stem-wall-container">
+				<div class="label-container">
+					<label class="dimension-label">Stem Wall Length</label>
+				</div>
 				<input
 					class="dimension-input"
 					type="tel"
@@ -155,12 +165,11 @@
 		<section>
 			<div class="estimate-container">
 				<div class="total-container">
-					<!-- <span id="estimate"></span> -->
 					<span id="tenPercentBelow"></span>
 					<span id="dash"></span>
 					<span id="tenPercentAbove"></span>
 				</div>
-				<button id="submit" type="button">Submit</button>
+				<button id="submit" type="button">Calculate</button>
 			</div>
 		</section>
 	</body>

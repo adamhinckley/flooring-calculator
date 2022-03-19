@@ -37,7 +37,6 @@ const sixteenthFlake = document.getElementById('sixteenthFlake');
 button.addEventListener('click', () => calculate());
 
 const calculate = () => {
-	console.log('submit fired');
 	const sparkle = hasAddIns.sparkles ? addInPrices.sparkles : 0;
 	const fluorescents = hasAddIns.fluorescents ? addInPrices.fluorescents : 0;
 	const glowInTheDark = hasAddIns.glowInTheDark ? addInPrices.glowInTheDark : 0;
@@ -58,7 +57,15 @@ const calculate = () => {
 	const dimensionTotal = firstHalfDimensions + secondHalfDimensions;
 	const totalBaseCost = (flakePrice + addInCost) * tax;
 	const stemWallCost = stemWallLength * (flakePrice + addInCost);
-	const total = dimensionTotal * totalBaseCost + stemWallCost;
+	let total = dimensionTotal * totalBaseCost + stemWallCost;
+
+	if (total < 500) {
+		tenPercentBelow.innerHTML = 'Installation Price: $500';
+		tenPercentAbove.innerHTML = '';
+		dash.innerHTML = '';
+		return;
+	}
+
 	const tenPercentBelowCost = Math.ceil((total * 0.9) / 10) * 10;
 	const tenPercentAboveCost = Math.ceil((total * 1.1) / 10) * 10;
 
