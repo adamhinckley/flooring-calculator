@@ -73,8 +73,6 @@ const calculate = () => {
 	tenPercentBelow.innerHTML = `Installation Estimate: $${tenPercentBelowCost.toFixed(0)}`;
 	tenPercentAbove.innerHTML = `$${tenPercentAboveCost.toFixed(0)}`;
 	dash.innerHTML = '-';
-
-	console.log({ dimensionTotal, totalBaseCost, stemWallCost, total });
 };
 
 const handleFlakeChange = (input) => {
